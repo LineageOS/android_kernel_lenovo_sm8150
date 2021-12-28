@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f867cd89_0cef2712",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2021-12-28T07:11:00Z",
+      "side": 1,
+      "message": "confirmed to fix cameras on heart and zippo. Great find Zhenxiang!",
+      "revId": "76929fda1d2c408b117f9b06f50c742f8f96bc70",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
