@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6225463_efbb5ee7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2021-12-28T04:17:27Z",
+      "side": 1,
+      "message": "fixes 2x zoom camera on zippo. We still need to test on heart if there\u0027s any regressions or if it helps with their camera issues too",
+      "revId": "22361025b32b8769bf458384554effa1669d1f2f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
