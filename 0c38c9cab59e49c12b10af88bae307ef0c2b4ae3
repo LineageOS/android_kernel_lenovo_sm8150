@@ -33,6 +33,23 @@
       "message": "turns out they were using haxxs to hide the error message and didn\u0027t mention it to me... great. I\u0027ll merge this and be sad.",
       "revId": "0c38c9cab59e49c12b10af88bae307ef0c2b4ae3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "33a5284f_030c7dc4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2023-04-23T22:11:50Z",
+      "side": 1,
+      "message": "...\n\nhttps://github.com/Evolution-X/frameworks_base/commit/0398ef7aaa29d3e741fa0834f57ee71fb28b4f82\n\nhttps://github.com/Spark-Rom/frameworks_base/commit/27591be16ad9658425677e3dad0a54379a076458",
+      "revId": "0c38c9cab59e49c12b10af88bae307ef0c2b4ae3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
