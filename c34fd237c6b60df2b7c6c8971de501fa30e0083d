@@ -16,6 +16,24 @@
       "message": "https://review.lineageos.org/c/LineageOS/android_device_nubia_TP1803/+/350681",
       "revId": "c34fd237c6b60df2b7c6c8971de501fa30e0083d",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5677cecd_91cc230d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19252
+      },
+      "writtenOn": "2023-04-23T13:45:46Z",
+      "side": 1,
+      "message": "ah crap I didn\u0027t see this before merging... so I would just need this in order to not need this revert?",
+      "parentUuid": "7db976b2_0fe0e0fe",
+      "revId": "c34fd237c6b60df2b7c6c8971de501fa30e0083d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
