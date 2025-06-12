@@ -436,10 +436,6 @@ static int smb5_parse_dt(struct smb5 *chip)
 		chip->dt.sec_charger_config == POWER_SUPPLY_CHARGER_SEC_PL ||
 		chip->dt.sec_charger_config == POWER_SUPPLY_CHARGER_SEC_CP_PL;
 
-#ifdef ADD_DISABLE_CHARGING_INTERFACE_FOR_TESTMODE
-        chg->chg_enabled = !(of_property_read_bool(node,
-                                "qcom,charging-disabled"));
-#endif
 	chg->step_chg_enabled = of_property_read_bool(node,
 				"qcom,step-charging-enable");
 
@@ -1721,9 +1717,6 @@ static enum power_supply_property smb5_batt_props[] = {
 	POWER_SUPPLY_PROP_CHARGE_TERM_CURRENT,
 	POWER_SUPPLY_PROP_TEMP,
 	POWER_SUPPLY_PROP_TECHNOLOGY,
-#ifdef ADD_DISABLE_CHARGING_INTERFACE_FOR_TESTMODE
-	POWER_SUPPLY_PROP_CHARGING_ENABLED,
-#endif
 #ifdef SUPPORT_BATTERY_AGE
 	POWER_SUPPLY_PROP_AGE,
 #endif
@@ -1796,12 +1789,6 @@ static int smb5_batt_get_prop(struct power_supply *psy,
 	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMITED:
 		rc = smblib_get_prop_input_current_limited(chg, val);
 		break;
-#ifdef ADD_DISABLE_CHARGING_INTERFACE_FOR_TESTMODE
-	 case POWER_SUPPLY_PROP_CHARGING_ENABLED:
-                val->intval = chg->chg_enabled;
-                pr_info("charge test mode:get chg_enable is %d\n",chg->chg_enabled);
-                break;
-#endif
 #ifdef SUPPORT_BATTERY_AGE
 	case POWER_SUPPLY_PROP_AGE:
 		rc = smblib_get_prop_batt_age(chg, val);
@@ -1959,14 +1946,6 @@ static int smb5_batt_set_prop(struct power_supply *psy,
 		vote(chg->fv_votable, QNOVO_VOTER, (val->intval >= 0),
 			val->intval);
 		break;
-#ifdef ADD_DISABLE_CHARGING_INTERFACE_FOR_TESTMODE
-	case POWER_SUPPLY_PROP_CHARGING_ENABLED:
-                smblib_set_usb_suspend(chg, !val->intval);
-                vote(chg->chg_disable_votable, DISABLE_CHARGER, !val->intval, 0);
-                chg->chg_enabled = val->intval;
-                pr_info("charge test mode:set chg_enable is %d\n",val->intval);
-                break;
-#endif
 #ifdef SUPPORT_USER_CHARGE_OP
 #define USER_CHARGE_OP_FCC_UA	2000000
 	case POWER_SUPPLY_PROP_USER_CHARGE_OP:
@@ -2061,9 +2040,6 @@ static int smb5_batt_prop_is_writeable(struct power_supply *psy,
 	case POWER_SUPPLY_PROP_DP_DM:
 	case POWER_SUPPLY_PROP_RERUN_AICL:
 	case POWER_SUPPLY_PROP_INPUT_CURRENT_LIMITED:
-#ifdef ADD_DISABLE_CHARGING_INTERFACE_FOR_TESTMODE
-	case POWER_SUPPLY_PROP_CHARGING_ENABLED:
-#endif
 #ifdef SUPPORT_USER_CHARGE_OP
 	case POWER_SUPPLY_PROP_USER_CHARGE_OP:
 #endif
